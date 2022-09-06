@@ -1,0 +1,15 @@
+
+hacer ejercicio:
+
+
+Cree una página con un formulario para que los usuarios puedan agregar Nombre, Apellido, Mail y Consulta.
+Al hacer clic en el botón “Enviar” se deberá ejecutar un script que controle que:
+El nombre no sea vacío y tenga entre 3 y 20 caracteres
+El apellido tiene las mismas restricciones que el Nombre
+El mail tiene que ser un mail válido [Números-Letras]@[números-letras].com.[Letras]
+La consulta no puede ser vacía.
+
+
+Revisar css(selectores, etc)
+html(generarlo, form, donde va script y link)
+js(capturar eventos y agregan logica)
