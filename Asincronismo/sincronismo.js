@@ -1,36 +1,36 @@
 //fetch
 
-// let html = document.getElementById('html');
-// function getDataFetch(nCharacter){
-//   fetch(`https://rickandmortyapi.com/api/character/${nCharacter}`)
-//   .then(r=>{
-//     return r.json()
-//   })
-//   .then(r=>{
-//     let result = {
-//       id: r.id,
-//       name: r.name,
-//       status: r.status,
-//       species: r.species,
-//     }   
-//     html.innerHTML += JSON.stringify(result);
-//   })
-//   .catch(error=>{console.log(error);});
-// }
-// for (let i = 1; i < 5; i++) {
-//   getDataFetch(i); 
-// }
-
-
-//fetch
-let id = document.getElementById('showData');
-function getHTMLFetch(){
-  fetch('https://rickandmortyapi.com/api/character')
+let html = document.getElementById('html');
+function getDataFetch(nCharacter, limite){
+  fetch(`https://rickandmortyapi.com/api/character/${nCharacter}%limit=${limite}`)
   .then(r=>{
     return r.json()
   })
   .then(r=>{
-    id.innerHTML += JSON.stringify(r.results);
+    let result = {
+      id: r.id,
+      name: r.name,
+      status: r.status,
+      species: r.species,
+    }   
+    html.innerHTML += JSON.stringify(result);
+  })
+  .catch(error=>{console.log(error);});
+}
+for (let i = 1; i < 5; i++) {
+  getDataFetch(i); 
+}
+
+let url;
+//fetch
+function getHTMLFetch(html, id){
+  fetch('html1.html')
+  .then(r=>{
+    return r.text()
+  })
+  .then(r=>{
+    let id = document.getElementById(id);
+    id.innerHTML += r;
   })
 }
 getHTMLFetch();
