@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <section id="app">
+    <input type="text" v-on:input="texto = $event.target.value">
+    <h2 v-bind:style="{color: red}">{{texto}}</h2>
+    <h2 v-bind:class="[textGreen]">asdasd</h2>
+    <h2 v-if="mostrar">H2 con vif</h2>
+    <h2 v-else>H2 con velse</h2>
+    <h2 v-show="showView">test</h2>
+    <button v-on:click="showClick">clickShow</button>
+    <ul>
+      <li>{{people[0]}}</li>
+      <li>{{people[1]}}</li>
+      <li>{{people[2]}}</li>
+    </ul>
+    <ul>
+      <li v-for="p in people">{{ p }}</li>
+    </ul>
+    <app-user></app-user>
+    <div v-for="n in 2">
+      <p>{{n}}</p>
+      <card v-bind:g="n"></card>
+    </div>
+ 
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
