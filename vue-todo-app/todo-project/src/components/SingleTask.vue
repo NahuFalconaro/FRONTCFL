@@ -1,12 +1,18 @@
 <template>
-  <p :class="{'check': t.check}">{{data.data}}</p>
+  <p>{{tarea}}</p>
+  <h1>{{test}}</h1>
 </template>
 
 <script>
 export default {
-  name: 'Task',
+  name: 'SingleTask',
   props: {
-    data: {}
+    tarea: String
+  },
+  data(){
+    return{
+      test: 'texto'
+    }
   }
 }
 </script>

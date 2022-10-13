@@ -5,7 +5,7 @@
   <BtnGetInfo @laKey="tareaDesdeHijo"></BtnGetInfo>
   <ul>
     <li v-for="t in tasks" :key="t.id">
-      <Task :data="t"></Task>
+      <SingleTask :tarea="msj"></SingleTask>
       <button v-on:click="updateTask(t.id)">marcar tarea</button>
       <button @click="deleteTask(t.id)">eliminar tarea</button>
     </li>
@@ -15,11 +15,8 @@
 <script>
   
 import BtnGetInfo from './BtnGetInfo.vue';
-this.tasks.push({
-                id: this.id++,
-                data: task,
-                check: false
-            });
+import SingleTask from './SingleTask.vue';
+
 export default {
     name: "TaskList",
     data() {
@@ -36,7 +33,6 @@ export default {
                 data: task,
                 check: false
             });
-            console.log(this.tasks);
         },
         updateTask(id) {
             //recorrer el arreglo y encontrar el objeto con el id y cambiarle el valor
@@ -60,6 +56,7 @@ export default {
             this.tasks = [];
         },
         tareaDesdeHijo(tarea){
+            console.log(tarea, 'tasklist');
           this.addTask(tarea);
         }
         /**
@@ -70,7 +67,7 @@ export default {
     
          */
     },
-    components: { BtnGetInfo }
+    components: { BtnGetInfo, SingleTask }
 }
 </script>
 
